@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Binary Convertor</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+<body>
+    <h1>Binary Convertor</h1>
+
+    <div class="input-area" id="main">
+
+        <textarea class="input" id="input" placeholder="Input"></textarea>
+
+        <br><br>
+
+        <button class="btn1" id="btnInput" type="button" pys-onClick="Binary">Convert to Binary</button>
+        
+        <button class="btn2" id="btnClear" type="button" pys-onClick="clear">Clear</button>
+    </div>
+
+
+    <div class="output-area" id="sub">
+        
+        <p class="output" id="output">Output will be here!</p>
+    </div>
+
+</body>
+
+<py-script>
+    inp = Element("input")
+    output = Element("output")
+
+    def Binary(*args , **kwargs):
+        if inp.value == "":
+            output.write("There is nothing to output!")
+        else:
+            temp = " ".join(format(ord(i), "08b") for i in inp.value)
+            output.write(temp)
+
+    def clear(*args , **kwargs):
+        inp.clear()
+        output.write("Output will be here!")
+</py-script>
+
+</html>

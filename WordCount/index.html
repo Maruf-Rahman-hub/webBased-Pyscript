@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>Word Count</title>
+</head>
+<body>
+    <h1>Word Counting project!</h1>
+    
+    <textarea name="input_text" id="input_text" placeholder="Enter the text"></textarea>
+    
+    <br>
+    
+    <button id="run" type="button" class="count" pys-onClick="count">Count</button>
+    <button id="clear" type="button" class="clear" pys-onClick="clear">Clear</button>
+
+    <br><br>
+
+    <h1 class="h1">Output----></h1>
+    <p class="output" id="output">0</p>
+</body>
+
+<py-script>
+    text = Element("input_text")
+    op = Element("output")
+
+    def count(*args , **kwargs):
+        c = len(text.value)
+        op.write(c)
+
+    def clear(*args , **kwargs):
+        text.clear()
+        op.write(0)
+        
+</py-script>
+</html>
